@@ -1,0 +1,199 @@
+/* filename: styles.css */
+:root{
+  --bg:#505050;
+  --card:#e55622;
+  --muted:#bcc4d2;
+  --accent:#e55622;
+  --accent-2:#045162;
+  --glass: rgba(255, 255, 255, 0.292);
+  --radius:12px;
+  --container:1100px;
+}
+
+/* Global reset */
+*{box-sizing:border-box}
+html,body{height:100%; overflow-y:scroll;}
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+  background: #000; /* just a fallback */
+  color: #fff;
+  line-height: 1.45;
+}
+
+/* Fluid & centered container */
+.container{
+  width: 90%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 28px;
+
+}
+
+        .section {
+            padding: 20px;
+            border-radius: 20px; /* The curved edges */
+            box-shadow: 0 6px 18px rgba(2, 6, 12, 0.6);
+            max-width: 1300px; /* New: Sets the maximum width of the section background */
+            margin: 40px auto; /* New: Centers the section on the page */ 
+            
+        }
+
+        /* Specific background colors for each section */
+        .section.light { background: rgba(0, 0, 0, 0);
+                                    box-shadow: 0 6px 18px rgba(2, 6, 12, 0);
+}
+        .section.dark { background: rgba(0, 0, 0, 0.75); }
+        .section.grey { background: rgba(116, 116, 116, 0.75); }
+        .section.blue { background: rgba(4, 81, 98, 0.75); }
+
+
+/* Header & navigation */
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{color:#ffff;font-weight:800;text-decoration:none;font-size:3rem; font-family:  "Oswald", sans-serif;}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
+.site-header{
+  backdrop-filter:blur(6px);
+  position:sticky;
+  top:0;
+  background:var(--bg);
+  border-bottom:5px solid var(--accent);
+  z-index:40;
+}
+
+
+/* Add an offset to all sections */
+section[id] {
+  scroll-margin-top: 120px; /* Header height (60px) + some extra space (10px) */
+}
+.main-nav{display:flex;gap:1rem;align-items:center}
+.main-nav a{color:var(--muted);text-decoration:none;padding:8px;border-radius:8px}
+.main-nav a:hover{color:#fff}
+.nav-toggle{display:none;background:none;border:0;color:#fff;font-size:1.25rem;padding:8px}
+.cta{background:#000;color:#fff;padding:8px 12px;border-radius:10px}
+
+/* Hero section */
+.hero-grid{display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:center}
+.hero h1{font-size:2.1rem;margin:0 0 8px}
+.subtitle{color:#fff;margin:0 0 18px}
+.key-info{list-style:none;padding:0;margin:0 0 18px;display:flex;gap:12px;flex-wrap:wrap}
+.key-info li{background:var(--glass);padding:8px 12px;border-radius:999px;color:#fff;font-size:0.95rem}
+.btn{display:inline-block;text-decoration:none;padding:10px 16px;border-radius:10px}
+.btn-primary{background:var(--accent);color:#042026;font-weight:700}
+.btn-outline{border:1px solid var(--accent);color:var(--muted);}
+.hero-visual{display:flex;justify-content:center}
+.moon-scene img{width:100%;height:auto;display:block; border:2px solid #e55622; border-radius: var(--radius);}
+
+/* Cards & sections */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:16px}
+.card{background: var(--card);padding:18px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(2,6,12,0.6)}
+.card h3{margin-top:0}
+
+/* Schedule & team */
+.schedule{display:flex;gap:12px;flex-wrap:wrap;padding:36px 0}
+.schedule-item{background:var(--card);padding:12px;border-radius:10px;min-width:200px}
+.schedule {
+  display: flex;
+  flex-direction: column; /* stack items vertically */
+  gap: 1.5rem;            /* space between them */
+}
+.schedule-item time{font-weight:700;display:block;margin-bottom:6px}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.team-card{background:var(--card);padding:12px;border-radius:10px}
+
+
+/* Forms */
+.form{display:grid;gap:12px;max-width:780px}
+.form input,.form select,.form textarea{padding:10px;border-radius:8px;border:1px solid #e55622;background:#ffff;color:#000000}
+.form label{font-size:0.95rem}
+.form-actions{display:flex;gap:12px}
+.note{color:var(--muted);font-size:0.9rem}
+
+/* Footer */
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px}
+.site-footer{background: #000; border-top: 5px solid var(--accent); color:#fff}
+.small{font-size:0.85rem;color:var(--muted)}
+
+/* Figures */
+figure{display:inline-block;text-align:center;margin:20px;}
+
+.figure-group {
+  display: flex;             /* horizontal layout */
+  justify-content: center;   /* center as a group */
+  gap: 40px;                 /* space between figures */
+  flex-wrap: wrap;           /* optional: wrap on small screens */
+}
+
+.figure-group figure {
+  margin: 0;                 /* remove default margins */
+  text-align: center;        /* center caption under image */
+}
+
+.img-wrapper {
+  display: flex;
+  justify-content: center; 
+  gap: 25px;/* center horizontally */
+}
+
+/* Responsive adjustments */
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr 1fr}
+  .team-grid{grid-template-columns:1fr 1fr}
+}
+
+@media (max-width:640px){
+  .header-inner{padding:10px}
+  .nav-toggle{display:block}
+  .main-nav{position:fixed;right:12px;top:64px;background:rgba(4,8,16,0.95);flex-direction:column;padding:12px;border-radius:10px;display:none}
+  .main-nav.open{display:flex}
+  .cards{grid-template-columns:1fr}
+  .team-grid{grid-template-columns:1fr}
+  .container{padding:18px}
+}
+
+/* Widescreen improvements */
+@media (min-width:1600px){
+  .container{
+    width: 75%;  /* container grows less than full screen */
+    padding: 40px;
+  }
+}
+
+/* Utility */
+.time{font-weight:600}
+
+/* Focus styles for accessibility */
+a:focus,a.button:focus,input:focus,select:focus,textarea:focus{outline:3px solid rgba(93,215,255,0.18);outline-offset:2px}
+
+/* Hero animation */
+.hero h1{animation:slideIn 700ms ease both}
+@keyframes slideIn{from{transform:translateY(8px);opacity:0}to{transform:none;opacity:1}}
+
+
+    * { box-sizing: border-box; }
+    body, html { padding:0; margin:0; height:100%; }
+
+.bg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: url("Lunabotics/moon.png") center center / cover no-repeat;
+  filter: blur(10px) brightness(0.8); /* lighter blur + keep brightness normal */
+  transition: filter 0.3s ease;
+  animation: drift 40s infinite alternate ease-in-out;
+  z-index: -1;
+}
+
+@keyframes drift {
+  0%   { transform: scale(1.1) translate(0,0); }
+  50%  { transform: scale(1.15) translate(-3%, 3%); }
+  100% { transform: scale(1.1) translate(3%, -3%); }
+}
+
+    /* Content on top */
+    .content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }

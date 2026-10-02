@@ -1,0 +1,146 @@
+<!-- filename: index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" href="Lunabotics/logo.png">
+  <title>UK Lunabotics 2026 — Further Information</title>
+  <meta name="description" content="Official site for the UK Lunabotics challenge.">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Untitled-1.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+  
+<div class="bg"></div>
+
+  <main>
+
+
+
+
+    <!-- Registration Section -->
+    <section id="register" class="section dark">
+      <div class="container">
+        <h2>UK Lunabotics 2026 Further Information Form</h2>
+        <p>Fill in the registration form below.</p>
+        <form class="form" action="https://script.google.com/macros/s/AKfycbyz-CwbfnBJhn0aP1Ah8dFC9CrgSadgzfU9BP0WjrJIGHeyPYu1isyNG9qxR9VPyRDU/exec" method="POST" target="_blank">
+
+              <label for="inst-name">Institution Name</label>
+              <input id="inst-name" name="inst-name" required>
+
+              <label for="team-name">Team Name (If different)</label>
+              <input id="team-name" name="team-name" required>
+              
+              <div id="emailList1" class="email-list">
+              <label for = "emails"> Student Email(s):</label>
+              <div class = "email-row">
+              <button type="button" class="add" onclick="addEmailField()">+</button>
+              </div>
+              </div>
+
+              <div id="emailList2" class="email-list">
+              <label for = "emails"> Advisor Email(s):</label>
+              <div class = "email-row">
+              <button type="button" class="add" onclick="addEmailField()">+</button>
+              </div>
+              </div>
+
+              <label for="dates">We are currently provisionally looking at the week of 15th June to host the UK Lunabotics 2026 competition. Are there any barriers to your team competing in Milton Keynes in that week?</label>
+              <input id="dates" placeholder = "Please enter opinion and suggest other dates if these are not appropriate"name="dates" required>
+
+              
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="reset" class="btn btn-outline" style  = color:black>Reset</button>
+              </div>
+            </form>
+            <p class="note">For more information, email <a href="mailto:uklunabotics@open.ac.uk" style="color: white; text-decoration: underline;">uklunabotics@open.ac.uk</a>.</p>
+          </div>
+    </section>
+
+
+  </main>
+
+
+<script>
+  function initEmailList(containerId) {
+    const container = document.getElementById(containerId);
+
+    // Create first row
+    const row = document.createElement("div");
+    row.className = "email-row";
+
+    const input = document.createElement("input");
+    input.type = "email";
+    input.name = containerId + "[]"; // each list gets its own array
+    input.placeholder = "Enter email";
+    input.required = true;
+
+    row.appendChild(input);
+    container.appendChild(row);
+
+    refreshButtons(containerId);
+  }
+
+  function refreshButtons(containerId) {
+    const container = document.getElementById(containerId);
+    const rows = container.querySelectorAll(".email-row");
+
+    // Remove old buttons
+    rows.forEach(row => {
+      row.querySelectorAll("button").forEach(btn => btn.remove());
+    });
+
+    // Add buttons to last row only
+    const lastRow = rows[rows.length - 1];
+
+    // "+" button
+    const addButton = document.createElement("button");
+    addButton.type = "button";
+    addButton.textContent = "+";
+    addButton.onclick = () => addEmailField(containerId);
+
+    // "-" button (only if more than 1 row)
+    const removeButton = document.createElement("button");
+    removeButton.type = "button";
+    removeButton.textContent = "-";
+    removeButton.onclick = () => {
+      lastRow.remove();
+      refreshButtons(containerId);
+    };
+
+    lastRow.appendChild(addButton);
+    if (rows.length > 1) lastRow.appendChild(removeButton);
+  }
+
+  function addEmailField(containerId) {
+    const container = document.getElementById(containerId);
+
+    const row = document.createElement("div");
+    row.className = "email-row";
+
+    const input = document.createElement("input");
+    input.type = "email";
+    input.name = containerId + "[]";  // keeps data separate per list
+    input.placeholder = "Enter email";
+    input.required = true;
+
+    row.appendChild(input);
+    container.appendChild(row);
+
+    refreshButtons(containerId);
+  }
+
+  // ❗ Initialize as many separate lists as you want
+  initEmailList("emailList1");
+  initEmailList("emailList2");
+</script>
+</body>
+
+</html>

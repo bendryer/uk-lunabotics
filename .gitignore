@@ -1,2 +1,19 @@
-OU_Solar_System/
-Radiation_Damage_Filter/
+# Publish only the files the UK Lunabotics page uses
+*
+!.gitignore
+!.nojekyll
+!index.html
+!Untitled-1.css
+!Lunabotics/
+Lunabotics/*
+!Lunabotics/logo.png
+!Lunabotics/moon.png
+!Lunabotics/rover.png
+!Lunabotics/discord.png
+!Lunabotics/book-open-text.svg
+!Lunabotics/construction.svg
+!Lunabotics/message-circle-question-mark.svg
+!Lunabotics/rocket.svg
+!Lunabotics/LunaboticsUK_launchSlides_v01.pdf
+!Lunabotics/UKLunabotics_OverviewAndRegistration_v1.2_21_10_2025.pdf
+!Lunabotics/UKLunabotics_RuleBook_v0.3_20_10_2025.pdf

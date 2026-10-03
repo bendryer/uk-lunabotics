@@ -1,260 +1,431 @@
-<!-- filename: index.html -->
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="icon" href="Lunabotics/logo.png">
   <title>UK Lunabotics 2027</title>
-  <meta name="description" content="Official site for the UK Lunabotics challenge. Registration for UK Lunabotics 2027 closes Friday 30 October 2026.">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="Untitled-1.css">
+  <meta name="description" content="Build a robot that builds on the Moon. UK Lunabotics is a year-long lunar construction rover challenge for UK university and college students, run by The Open University. Applications for 2027 close Friday 30 October 2026.">
+  <meta name="theme-color" content="#0a0a0b">
+  <link rel="icon" href="Lunabotics/logo-small.png">
+  <meta property="og:title" content="UK Lunabotics 2027">
+  <meta property="og:description" content="Student teams build lunar construction rovers and compete in the Moon Yard at The Open University. Apply by 30 October 2026.">
+  <meta property="og:image" content="https://uklunabotics.co.uk/Lunabotics/2026/qpl-moon.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..900&family=Martian+Mono:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
 
-  <header class="site-header">
-    <div class="container header-inner">
-        <img src = "Lunabotics/logo.png" height = 75px padding  = 0></img>
-      <a href="#hero" class="brand">UK Lunabotics</a>
-
-      <nav class="main-nav" aria-label="Main navigation">
-        <a href="#about">About</a>
-        <a href="#docs">Documents</a>
-        <a href="#schedule">Schedule</a>
+  <header class="masthead">
+    <div class="wrap masthead__inner">
+      <a class="masthead__logo" href="#top" aria-label="UK Lunabotics home">
+        <img src="Lunabotics/logo-small.png" alt="UK Lunabotics" width="172" height="104">
+      </a>
+      <a class="masthead__ou" href="https://www.open.ac.uk/" aria-label="The Open University">
+        <img src="Lunabotics/ou-logo-blue.svg" alt="The Open University" width="548" height="179">
+      </a>
+      <nav class="masthead__nav" aria-label="Main">
         <a href="#teams">Teams</a>
-        <a href="#register" class="cta">Apply</a>
+        <a href="#challenge">Challenge</a>
+        <a href="#judging">Judging</a>
+        <a href="#dates">Dates</a>
+        <a href="#apply">Apply</a>
       </nav>
+      <a class="btn btn--orange masthead__cta" href="#start">Start a team</a>
     </div>
+    <nav class="subnav" aria-label="Sections">
+      <a href="#teams">Teams</a>
+      <a href="#challenge">Challenge</a>
+      <a href="#judging">Judging</a>
+      <a href="#dates">Dates</a>
+      <a href="#apply">Apply</a>
+    </nav>
   </header>
-      
-  
-<div class="bg"></div>
 
-  <main>
-    <!-- Hero Section -->
-    <section id="hero" class="hero section light">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <h1>Take part in UK Lunabotics 2027</h1>
-          <p class="subtitle">A year-long engineering challenge for UK university and college students. Design, build and test a lunar construction rover using systems engineering, then compete in our lunar arena. Free to enter, and no previous competition experience needed!</p>
-          <ul class="key-info" aria-hidden="false">
-            <li><strong>Registration deadline:</strong> Friday 30 October 2026, 23:59 (UK time)</li>
-            <li><strong>Competition:</strong> 6–8 July 2027</li>
-            <li><strong>Location:</strong> The Open University, Kents Hill, Milton Keynes, UK</li>
-          </ul>
-          <div class="hero-actions">
-            <a href="#register" class="btn btn-primary">How to apply</a>
-            <a href="#schedule" class="btn btn-outline">View key dates</a>
+  <main id="main">
+
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="wrap hero__grid">
+        <div class="hero__copy">
+          <h1 id="hero-title">Build a robot that builds on the Moon.</h1>
+          <p class="hero__lede">Four UK student teams brought lunar construction rovers to the Moon Yard at The Open University in 2026. 2027 is your turn. Free to enter, no experience needed.</p>
+
+          <div class="hero__actions">
+            <a class="btn btn--orange btn--big" href="#start">Start a team</a>
+            <a class="btn btn--line btn--big" href="#apply">How to apply</a>
+          </div>
+
+          <div class="countdown" data-deadline="2026-10-30T23:59:00Z">
+            <p class="countdown__label" id="countdown-label">Applications close Friday 30 October 2026, 23:59 UK time</p>
+            <div class="countdown__clock" role="timer" aria-labelledby="countdown-label">
+              <span><b data-unit="d">0</b><small>days</small></span>
+              <span><b data-unit="h">00</b><small>hrs</small></span>
+              <span><b data-unit="m">00</b><small>min</small></span>
+              <span><b data-unit="s">00</b><small>sec</small></span>
+            </div>
           </div>
         </div>
-        <div class="hero-visual" aria-hidden="true">
-          <div class="moon-scene">
-            <img src="Lunabotics/rover.png"  alt="Lunar rover illustration" />
+
+        <div class="monitor" role="region" aria-label="2026 competing teams">
+          <div class="monitor__bar">
+            <span class="monitor__loc">Moon Yard, The Open University, July 2026</span>
+            <span class="monitor__status">
+              <span class="monitor__rec" aria-hidden="true"><i></i>2026 replay <span class="monitor__tc" data-timecode>00:00:00:00</span></span>
+              <button class="monitor__pause" type="button" aria-pressed="false" aria-label="Pause the camera cycle" hidden>
+                <svg class="icon-pause" viewBox="0 0 14 14" aria-hidden="true"><rect x="2" y="1" width="3.5" height="12"/><rect x="8.5" y="1" width="3.5" height="12"/></svg>
+                <svg class="icon-play" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1 L13 7 L3 13 Z"/></svg>
+              </button>
+            </span>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section dark">
-      <div class="container">
-        <h2>About the challenge</h2>
-        <p>UK Lunabotics is run by The Open University and is based on NASA's Lunabotics Challenge, in which university teams build prototype off-world construction robots. Over the 2026/27 academic year, your team will apply the NASA systems engineering process to design, build and test a rover that can cross challenging lunar terrain and build a berm from regolith simulant. On the Moon, berms like this could protect astronauts, habitats and equipment from the dust and rock blasted out when spacecraft land and take off.</p>
-        <div class="cards">
-          <article class="card">
-            <h3>The challenge</h3>
-            <p>Drive your rover, by remote control or autonomously, across a lunar sandbox with obstacles. Collect regolith simulant from an excavation zone and build a berm in a 1.5 m × 0.9 m target area. You operate from a shed using arena camera feeds, without seeing the arena directly.</p>
-          </article>
-          <article class="card">
-            <h3>Who can enter?</h3>
-            <p>Teams of at least two undergraduate or further education students enrolled at UK universities and further/higher education colleges (including degree apprentices), supported by an Academic Supervisor from their institution. Teams from more than one institution are welcome. Entry is free; teams fund their own rover, travel and accommodation.</p>
-          </article>
-          <article class="card">
-            <h3>Why compete?</h3>
-            <p>Gain practical experience of systems, mechanical, electrical and software engineering, from designing frames and mobility systems to writing software for remote and autonomous operations, along with project management and teamwork skills that employers value.</p>
-          </article>
-        </div>
-        <h3>How it is scored</h3>
-        <p>Every rover must first pass a mechanical inspection and a communications check. It is then scored on berm volume normalised for robot mass, berm volume normalised for energy use, bandwidth use (how many arena cameras you choose), and autonomy tasks worth 50–600 points. Each team also gives a short Presentation and Demonstration to the judges. Full scoring is in the rulebook.</p>
-        <p>Caterpillar, the main sponsor of the US challenge, and NASA's Solar System Exploration Research Virtual Institute (SSERVI) supported bringing the competition to the UK, and the US organisers and Caterpillar UK provide input. UK Lunabotics is not run by NASA, and teams should not describe themselves as affiliated with or sponsored by NASA.</p>
-      </div>
-    </section>
-
-    <!-- Documents Section -->
-    <section id="docs" class="section blue">
-      <div class="container">
-
-        <h2>Thinking of Setting Up a Team?</h2>
-        <p>Taking part in the UK Lunabotics competition is a great way to develop system engineering, design, test, communication skills, in a fun and supportive environment.</p>
-        
-        <div style="display: flex; align-items: center; gap: 10px;">
-          <a href="https://discord.gg/Qh26afgBPT">
-            <img src="Lunabotics/discord.png" alt="Discord" style="width:12.5vh; height:10vh;">
-          </a>
-          <p style="margin: 0;">
-            Teams from the US Lunabotics competition have set up a
-            <a href="https://discord.gg/Qh26afgBPT" style="color: white; text-decoration: underline;">Discord</a>
-            for sharing knowledge, and welcome anyone looking to take part in the UK competition to join in the conversation.
-          </p>
-        </div>
-
-
-        <h2>Documents for Setting up a Team:</h2>
-        <div class = "figure-group">
-
-        <figure>
-          <img src="Lunabotics/book-open-text.svg" alt="Sample Image" width="150">
-          <figcaption><a href="Lunabotics/UKLunabotics2027_RuleBook_DRAFT_v0.1.pdf" style="color: white; text-decoration: underline;" download>2027 Draft Rulebook (PDF)</a></figcaption>
-        </figure>
-
-
-                <figure>
-          <img src="Lunabotics/message-circle-question-mark.svg" alt="Sample Image" width="150">
-          <figcaption><a href="Lunabotics/UKLunabotics2027_OverviewAndRegistration_v2.0_23_09_2026.pdf" style="color: white; text-decoration: underline;" download>2027 Challenge Overview<br>and Registration Requirements (PDF)</a></figcaption>
-        </figure>
-
-                <figure>
-          <img src="Lunabotics/rocket.svg" alt="Sample Image" width="150">
-          <figcaption><a href="Lunabotics/UKLunabotics_2025_LaunchSlides.pdf" style="color: white; text-decoration: underline;" download>2025 Launch Slides (PDF)</a></figcaption>
-        </figure>
-      </div>
-      </div>
-    </section>
-
-
-    <!-- Schedule Section -->
-    <section id="schedule" class="section dark">
-      <div class="container">
-        <h2>Key Dates for 2027</h2>
-        <div class="schedule">
-          <div class="schedule-item">
-            <time datetime="2026-10-30T23:59">Fri 30 October 2026, 23:59</time>
-            <p>Registration deadline - email your Statement of Support and Project Management Plan to <a href="mailto:uklunabotics@open.ac.uk" style="color: white; text-decoration: underline;">uklunabotics@open.ac.uk</a>.</p>
+          <div class="monitor__screen">
+            <figure class="feed is-live" id="feed-1" role="tabpanel" tabindex="0" aria-labelledby="cam-1">
+              <img src="Lunabotics/2026/qpl-pit.webp" fetchpriority="high" alt="QPL team members gathered around their rover in the pit area" width="800" height="529">
+              <p class="stamp stamp--screen">2026 champions</p>
+              <figcaption class="lower-third">
+                <strong>QPL · Queen's University Belfast</strong>
+                <span>Crossed the Moon Yard, dug and deposited regolith</span>
+              </figcaption>
+            </figure>
+            <figure class="feed" id="feed-2" role="tabpanel" tabindex="0" aria-labelledby="cam-2" hidden>
+              <img src="Lunabotics/2026/newcastle-pit.webp" loading="lazy" decoding="async" alt="Newcastle Lunabotics students fitting wheels to their rover's frame in the pit" width="800" height="600">
+              <figcaption class="lower-third">
+                <strong>Newcastle Lunabotics · Newcastle University</strong>
+                <span>New team, built from zero, rover moving in the pit</span>
+              </figcaption>
+            </figure>
+            <figure class="feed" id="feed-3" role="tabpanel" tabindex="0" aria-labelledby="cam-3" hidden>
+              <img src="Lunabotics/2026/leicester-selfie.webp" loading="lazy" decoding="async" alt="Innova UoL team members grinning in a selfie with their rover INNEX-1" width="800" height="1066" style="object-position: 50% 45%">
+              <figcaption class="lower-third">
+                <strong>Innova UoL · University of Leicester</strong>
+                <span>Rover INNEX-1, from CAD to working machine</span>
+              </figcaption>
+            </figure>
+            <figure class="feed" id="feed-4" role="tabpanel" tabindex="0" aria-labelledby="cam-4" hidden>
+              <img src="Lunabotics/2026/marsworks-rover.webp" loading="lazy" decoding="async" alt="Project MarsWorks rover with its excavator arm, on grass outside the competition building" width="800" height="533">
+              <figcaption class="lower-third">
+                <strong>Project MarsWorks · University of Sheffield</strong>
+                <span>Team of 12, custom excavator worked</span>
+              </figcaption>
+            </figure>
           </div>
-
-          <div class="schedule-item">
-            <time datetime="2026-11-20">By Fri 20 November 2026</time>
-            <p>Teams notified whether they have a place.</p>
-          </div>
-
-          <div class="schedule-item">
-            <time datetime="2026-12-02">Wed 2 December 2026</time>
-            <p>Information day at The Open University, Milton Keynes. Remote connection will be possible, but in-person attendance is encouraged.</p>
-          </div>
-
-          <div class="schedule-item">
-            <time datetime="2027-01-29">By Fri 29 January 2027</time>
-            <p>Preliminary Design Review (PDR) held by each team.</p>
-          </div>
-
-          <div class="schedule-item">
-            <time datetime="2027-03-12">By Fri 12 March 2027</time>
-            <p>Critical Design Review (CDR) held by each team.</p>
-          </div>
-
-          <div class="schedule-item">
-            <time datetime="2027-03-19">Fri 19 March 2027</time>
-            <p>Down selection to 8 teams.</p>
-          </div>
-
-          <div class="schedule-item">
-            <time datetime="2027-05-14">By Fri 14 May 2027</time>
-            <p>"Proof of Life" video due, showing your rover moving material and its emergency stop working.</p>
-          </div>
-
-          <div class="schedule-item">
-            <time datetime="2027-05-21">Fri 21 May 2027</time>
-            <p>Places at the competition confirmed to teams.</p>
-          </div>
-
-          <div class="schedule-item">
-            <time datetime="2027-07-06">Tue 6 July 2027</time>
-            <p>Arrival at The Open University for rover assembly and test.</p>
-          </div>
-
-          <div class="schedule-item">
-            <time datetime="2027-07-07">Wed 7 – Thu 8 July 2027</time>
-            <p>UK Lunabotics Competition at The Open University, Milton Keynes.</p>
+          <div class="monitor__cams" role="tablist" aria-label="Choose a team camera">
+            <button class="cam" type="button" role="tab" id="cam-1" aria-controls="feed-1" aria-selected="true"><span class="cam__n">CAM 1</span><span class="cam__t">QPL</span></button>
+            <button class="cam" type="button" role="tab" id="cam-2" aria-controls="feed-2" aria-selected="false" tabindex="-1"><span class="cam__n">CAM 2</span><span class="cam__t">Newcastle</span></button>
+            <button class="cam" type="button" role="tab" id="cam-3" aria-controls="feed-3" aria-selected="false" tabindex="-1"><span class="cam__n">CAM 3</span><span class="cam__t">Innova UoL</span></button>
+            <button class="cam" type="button" role="tab" id="cam-4" aria-controls="feed-4" aria-selected="false" tabindex="-1"><span class="cam__n">CAM 4</span><span class="cam__t">MarsWorks</span></button>
           </div>
         </div>
       </div>
-    </section>
-    <!-- Testimonial Section-->
-
-    <section id = 'testimonial' class = 'section grey'>
-      <div class ="container">
-        <h2> Testimonials</h2>
-        <p>
-          "[Lunabotics] was a great way to amass technical and leadership experience and really helped me to figure out what I liked about engineering on my own time..." Valerie York, 2024 Purdue Lunabotics
-        </p>
-
+      <div class="ground" aria-hidden="true">
+        <svg class="ground__scan" viewBox="0 0 1440 120" preserveAspectRatio="none">
+          <path d="M0 40 C 200 38, 300 26, 420 30 S 640 50, 760 46 S 960 14, 1080 18 S 1260 44, 1360 40 S 1420 36, 1440 37"/>
+          <path d="M0 60 C 200 58, 300 46, 420 50 S 640 68, 760 64 S 960 34, 1080 38 S 1260 62, 1360 58 S 1420 55, 1440 56"/>
+          <path d="M0 78 C 190 76, 290 66, 420 68 S 640 86, 760 82 S 960 54, 1080 58 S 1260 80, 1360 76 S 1420 74, 1440 75"/>
+          <path d="M0 96 C 180 94, 280 86, 420 88 S 640 102, 760 100 S 960 76, 1080 78 S 1260 98, 1360 95 S 1420 93, 1440 94"/>
+          <path d="M0 112 C 180 111, 280 106, 420 107 S 640 116, 760 115 S 960 100, 1080 101 S 1260 113, 1360 111 S 1420 110, 1440 111"/>
+        </svg>
       </div>
-
-
-
     </section>
 
-    <!-- Teams Section -->
-    <section id="teams" class="section blue">
-      <div class="container">
-        <h2>Teams</h2>
-        <p>UK Lunabotics ran for the first time in 2026. Seven teams took part in the challenge, and four of them brought their rovers to the competition at The Open University. The winning team has since been invited as the UK entry to the international competition in the USA in late 2026. Thank you to every team, supervisor, judge and partner who made the first year a success!</p>
-        <p>We look forward to welcoming new and returning teams in 2027. Teams will hear whether they have a place by 20 November 2026 - keep an eye on here!</p>
-        <div class="img-wrapper">
-
-        <img src="Lunabotics/construction.svg" alt="Sample Image" width="250" >
-
+    <section class="teams" id="teams" aria-labelledby="teams-title">
+      <div class="wrap">
+        <div class="section-head section-head--wide">
+          <h2 id="teams-title">Seven teams started. Four reached the Moon Yard.</h2>
+          <p>UK Lunabotics ran for the first time in 2026. These are the teams that brought rovers to the competition at The Open University, Milton Keynes.</p>
         </div>
 
-        <!--<div class="team-grid">
-          <article class="team-card">
-            <h3>Newton University Rover Club</h3>
-            <p>Student team focusing on lightweight design and autonomous navigation.</p>
-          </article>
-          <article class="team-card">
-            <h3>Moonseekers Robotics</h3>
-            <p>Community hobbyists specialising in modular rover platforms.</p>
-          </article>
-          <article class="team-card">
-            <h3>Aurora Systems Ltd.</h3>
-            <p>Professional entry showcasing ruggedized hardware and mission planning tools.</p>
-          </article>
-        </div> -->
-      </div>
-    </section>
+        <article class="champion">
+          <div class="champion__photo">
+            <img src="Lunabotics/2026/qpl-moon.webp" alt="The QPL team and their rover in front of an inflatable Moon at The Open University" width="800" height="600" loading="lazy">
+          </div>
+          <div class="champion__text">
+            <h3>QPL <span>Queen's University Belfast · 2026 champions</span></h3>
+            <p>After nine months of work, QPL's rover crossed the Moon Yard and both dug and deposited regolith, which made them overall winners. They shipped the rover from Belfast to Milton Keynes and back, and go on as the UK entry to the international competition in the USA.</p>
+          </div>
+        </article>
 
+        <div class="squad">
+          <article class="squad__team">
+            <img src="Lunabotics/2026/newcastle-moon.webp" alt="Newcastle Lunabotics team with their rover in front of the inflatable Moon" width="800" height="702" loading="lazy">
+            <h3>Newcastle Lunabotics <span>Newcastle University</span></h3>
+            <p>A brand-new team that started from zero. They designed, wired and coded their whole electrical and software system and got the rover moving in the pit. When the drivetrain failed, they ran a mini 3D printer overnight in their hotel room to make new parts.</p>
+          </article>
+          <article class="squad__team">
+            <img src="Lunabotics/2026/leicester-moon.webp" alt="University of Leicester Innova UoL team with rover INNEX-1 in front of the inflatable Moon" width="800" height="450" loading="lazy">
+            <div>
+              <h3>Innova UoL <span>University of Leicester</span></h3>
+              <p>Months of design, manufacturing and late-night testing took their rover, INNEX-1, from CAD models to a working machine.</p>
+            </div>
+          </article>
+          <article class="squad__team">
+            <img src="Lunabotics/2026/marsworks-moon.webp" alt="Project MarsWorks team with their rover in front of the inflatable Moon" width="800" height="450" loading="lazy">
+            <div>
+              <h3>Project MarsWorks <span>University of Sheffield</span></h3>
+              <p>A team of 12 whose custom excavator system worked in competition. They're using it as the foundation for next year.</p>
+            </div>
+          </article>
+        </div>
 
-    <!-- Registration Section -->
-    <section id="register" class="section dark">
-      <div class="container">
-        <h2>How to apply</h2>
-        <p>By Friday 30 October 2026, 23:59 (UK time), the Academic Supervisor or team lead should email two PDFs to <a href="mailto:uklunabotics@open.ac.uk" style="color: white; text-decoration: underline;">uklunabotics@open.ac.uk</a>:</p>
-        <ul>
-          <li><strong>Statement of Support</strong> from your Academic Supervisor, on institution letterhead, named <em>SOS-Institution Name</em>.</li>
-          <li><strong>Project Management Plan</strong> (max. 5 pages) covering your initial schedule, cost budget, technical objectives and Technical Performance Measures, named <em>PMP-Institution Name</em>.</li>
+        <ul class="strip" aria-label="More from the 2026 competition">
+          <li>
+            <img src="Lunabotics/2026/qpl-celebrate.webp" alt="Two QPL team members grinning, arm in arm, at the competition" width="800" height="529" loading="lazy">
+            <p class="tag">Run done</p>
+          </li>
+          <li>
+            <img src="Lunabotics/2026/qpl-uk-shirts.webp" alt="Two students in UK Lunabotics shirts wiring a rover" width="800" height="529" loading="lazy">
+            <p class="tag">Pit repairs</p>
+          </li>
+          <li>
+            <img src="Lunabotics/2026/qpl-regolith.webp" alt="A rover beside a bucket of sand used as regolith" width="900" height="1200" loading="lazy">
+            <p class="tag">Regolith</p>
+          </li>
         </ul>
-        <p>Use your institution's official name in the file names, not your team name (for example <em>SOS-The Open University</em>). There is no fixed number of places; if we receive more good applications than we have places for, places are offered in order of PMP score. Full requirements and a template Statement of Support are in the <a href="Lunabotics/UKLunabotics2027_OverviewAndRegistration_v2.0_23_09_2026.pdf" style="color: white; text-decoration: underline;">2027 Challenge Overview and Registration Requirements</a>.</p>
-        <p>Questions? Email us at <a href="mailto:uklunabotics@open.ac.uk" style="color: white; text-decoration: underline;">uklunabotics@open.ac.uk</a> at any stage, including before you apply. No question is too basic.</p>
-          </div>
+      </div>
     </section>
 
+    <section class="challenge sky" id="challenge" aria-labelledby="challenge-title">
+      <div class="wrap">
+        <div class="mission">
+          <div class="mission__text">
+            <h2 id="challenge-title">Cross. Dig. Build a berm.</h2>
+            <p class="mission__lede">A berm is a raised bank of regolith. On the Moon, berms could protect astronauts, habitats and equipment from the rock and dust blasted out when spacecraft land and take off, and give shielding from radiation and heat.</p>
+            <ol class="route" id="route-steps">
+              <li><b>Cross</b> the obstacle zone, by remote control or autonomously.</li>
+              <li><b>Dig</b> regolith in the excavation zone.</li>
+              <li><b>Build</b> a berm inside the 1.5 m × 0.9 m target. Bigger berms protect more.</li>
+            </ol>
+          </div>
 
+          <figure class="arena" aria-describedby="route-steps">
+            <svg viewBox="-20 -20 880 540" role="img" aria-labelledby="arena-title">
+              <title id="arena-title">Plan of the 7.9 m by 4.4 m Moon Yard: a start zone and construction zone on the left, an obstacle zone with boulders and craters in the middle, and an excavation zone on the right. The rover crosses the obstacles, digs in the excavation zone and returns to build a berm in the target area.</title>
+              <defs>
+                <pattern id="dig-hatch" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                  <path d="M0 0 V14" class="arena__hatch"/>
+                </pattern>
+                <marker id="route-arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M0 0 L10 5 L0 10 Z" class="arena__arrowhead"/>
+                </marker>
+              </defs>
+
+              <rect class="arena__floor" x="0" y="0" width="790" height="440"/>
+              <rect class="arena__dig" x="515" y="0" width="275" height="440"/>
+              <rect class="arena__zone" x="0" y="0" width="200" height="200"/>
+              <rect class="arena__zone" x="0" y="290" width="260" height="150"/>
+              <rect class="arena__target" x="35" y="318" width="150" height="90"/>
+              <path class="arena__berm" d="M52 380 C 70 352, 150 352, 168 380 Z"/>
+
+              <g class="arena__rock">
+                <circle cx="52" cy="248" r="17"/><circle cx="292" cy="72" r="17"/>
+                <circle cx="338" cy="232" r="17"/><circle cx="402" cy="342" r="17"/>
+                <circle cx="300" cy="398" r="17"/><circle cx="575" cy="62" r="17"/>
+                <circle cx="700" cy="400" r="17"/>
+              </g>
+              <g class="arena__crater">
+                <circle cx="425" cy="70" r="24"/><circle cx="455" cy="200" r="24"/><circle cx="730" cy="245" r="24"/>
+              </g>
+
+              <path class="arena__route" d="M120 120 C 250 150, 420 120, 600 175" marker-end="url(#route-arrow)"/>
+              <path class="arena__route" d="M610 225 C 470 285, 320 310, 200 352" marker-end="url(#route-arrow)"/>
+
+              <g class="arena__stop"><circle cx="380" cy="132" r="19"/><text x="380" y="140">1</text></g>
+              <g class="arena__stop"><circle cx="640" cy="200" r="19"/><text x="640" y="208">2</text></g>
+              <g class="arena__stop"><circle cx="226" cy="402" r="19"/><text x="226" y="410">3</text></g>
+
+              <text class="arena__label" x="16" y="34">Start</text>
+              <text class="arena__label" x="16" y="282">Construction</text>
+              <text class="arena__label" x="290" y="28">Obstacles</text>
+              <text class="arena__label" x="531" y="34">Excavation</text>
+
+              <g class="arena__dim">
+                <path d="M0 478 V492 M790 478 V492 M0 485 H790"/>
+                <text x="395" y="514" text-anchor="middle">7.9 m</text>
+                <path d="M808 0 H822 M808 440 H822 M815 0 V440"/>
+                <text x="838" y="228" text-anchor="middle" transform="rotate(90 838 228)">4.4 m</text>
+              </g>
+            </svg>
+            <figcaption>Layout from the draft 2027 rulebook. Obstacles move between runs, and the final layout may change.</figcaption>
+          </figure>
+        </div>
+
+        <div class="shed">
+          <figure class="shed__photo">
+            <img src="Lunabotics/2026/qpl-ops-room.webp" alt="Students at laptops in Mission Control, with arena camera feeds on a large screen" width="800" height="529" loading="lazy">
+            <figcaption class="lower-third lower-third--still">
+              <strong>Mission Control</strong>
+              <span>Arena cameras on the big screen</span>
+            </figcaption>
+          </figure>
+          <div class="shed__text">
+            <h3>Drive by camera, or let it drive itself.</h3>
+            <p>During each run your team works from Mission Control. You can drive using the arena cameras provided, or choose not to use them and rely on your rover's own sensors and on-board systems. Going autonomous earns extra points.</p>
+          </div>
+        </div>
+
+        <div class="skills">
+          <div class="skills__head">
+            <h3>What you'll learn</h3>
+            <p>Over the 2026/27 academic year your team designs, builds and tests the rover, working through the same review stages NASA uses: System Requirements, Preliminary Design and Critical Design Reviews. It's real engineering, and a lot more besides.</p>
+          </div>
+            <div class="skills__groups">
+              <div>
+                <h4>Engineering</h4>
+                <ul class="skills__list">
+                  <li><b>Mechanical design</b><span>A chassis, drivetrain and digging system that can cope with sand, boulders and craters.</span></li>
+                  <li><b>Electronics and power</b><span>Wiring, batteries, an emergency stop, and measuring the energy your rover uses.</span></li>
+                  <li><b>Machine vision and autonomy</b><span>Sensors and cameras that detect obstacles, map the arena and plan a route.</span></li>
+                  <li><b>Hands-on building</b><span>Fabrication, 3D printing, wiring and testing, from CAD to a machine that runs.</span></li>
+                </ul>
+              </div>
+              <div>
+                <h4>Beyond engineering</h4>
+                <ul class="skills__list">
+                  <li><b>Coordinating moving parts</b><span>Keeping a schedule, a budget and a dozen people's work pointing at the same deadline.</span></li>
+                  <li><b>Raising money</b><span>Pitching to sponsors and your university to fund parts, travel and shipping.</span></li>
+                  <li><b>Problem-solving under pressure</b><span>Fixing what breaks in the pit, sometimes overnight.</span></li>
+                  <li><b>Presenting your work</b><span>Writing your plan and explaining your design and teamwork to judges.</span></li>
+                  <li><b>Public engagement</b><span>Sharing your project with schools, sponsors and the public, and inspiring the next team.</span></li>
+                </ul>
+              </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="judging" id="judging" aria-labelledby="judging-title">
+      <div class="wrap judging__grid">
+        <figure class="judging__photo">
+          <img src="Lunabotics/2026/qpl-weigh-in.webp" alt="A rover on a weighing scale during inspection, the display reading its mass" width="800" height="529" loading="lazy">
+          <figcaption class="lower-third lower-third--still">
+            <strong>Weigh-in</strong>
+            <span>Every rover is inspected before it runs</span>
+          </figcaption>
+        </figure>
+        <div class="judging__text">
+          <h2 id="judging-title">How teams are judged</h2>
+          <ul class="criteria">
+            <li><b>Berm volume</b><span>How much regolith your rover builds in the target area.</span></li>
+            <li><b>Camera use</b><span>How few arena cameras you need to drive.</span></li>
+            <li><b>Autonomy</b><span>Tasks your rover completes on its own.</span></li>
+            <li><b>Technical presentation</b><span>Showing the judges your design and how your team worked.</span></li>
+          </ul>
+          <p class="judging__more">Full details are in the <a href="Lunabotics/UKLunabotics2027_RuleBook_DRAFT_v0.1.pdf">2027 Rulebook (draft, PDF)</a>. Final rules to follow.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="dates sky" id="dates" aria-labelledby="dates-title">
+      <div class="wrap">
+        <div class="section-head section-head--split">
+          <h2 id="dates-title">Key dates, 2026/27</h2>
+          <p>The full timeline is in the <a href="Lunabotics/UKLunabotics2027_OverviewAndRegistration_v2.0_23_09_2026.pdf">2027 overview (PDF)</a>.</p>
+        </div>
+        <ol class="timeline" data-timeline>
+          <li data-date="2026-10-30T23:59:00Z"><time datetime="2026-10-30T23:59">Fri 30 Oct 2026</time><span class="timeline__t"></span><div><b><a href="#apply">Applications close</a></b></div></li>
+          <li data-date="2026-11-20T23:59:00Z"><time datetime="2026-11-20">By Fri 20 Nov 2026</time><span class="timeline__t"></span><div><b>Places announced</b></div></li>
+          <li data-date="2026-12-02T09:00:00Z"><time datetime="2026-12-02">Wed 2 Dec 2026</time><span class="timeline__t"></span><div><b>Information day</b><p>At The Open University, or join remotely.</p></div></li>
+          <li data-date="2027-03-12T23:59:00Z"><time datetime="2027-01-29">Jan – Mar 2027</time><span class="timeline__t"></span><div><b>Design reviews</b><p>Your team runs its own, with feedback from organisers and industry.</p></div></li>
+          <li data-date="2027-05-14T23:59:00Z"><time datetime="2027-05-14">By Fri 14 May 2027</time><span class="timeline__t"></span><div><b>Proof of Life video</b><p>Your rover moving material, and its emergency stop working.</p></div></li>
+          <li data-date="2027-07-06T09:00:00Z"><time datetime="2027-07-06">6–8 Jul 2027</time><span class="timeline__t"></span><div><b>UK Lunabotics Competition</b><p>The Moon Yard, The Open University, Milton Keynes.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="start" id="start" aria-labelledby="start-title">
+      <div class="wrap">
+        <div class="section-head section-head--split">
+          <h2 id="start-title">No team yet? Start with a lecturer.</h2>
+          <p>Newcastle started from zero in 2026 and still got their rover moving at the competition. Every team needs an Academic Supervisor, so that's the first person to ask.</p>
+        </div>
+
+        <div class="start__grid">
+          <ol class="steps">
+            <li>
+              <span class="steps__when">This week</span>
+              <b>Ask a lecturer to be your Academic Supervisor</b>
+              <p>A member of staff at your institution, 21 or over, who supports the team through the year, signs your Statement of Support and attends the whole competition (6–8 July 2027).</p>
+            </li>
+            <li>
+              <span class="steps__when">This week</span>
+              <b>Start recruiting your team</b>
+              <p>Teams need at least two undergraduate or further education students. There's no maximum, but only around 10 per team can attend the event.</p>
+            </li>
+            <li>
+              <span class="steps__when">Before 30 Oct</span>
+              <b>Write your Project Management Plan</b>
+              <p>Up to 5 pages: your first take on how you'd tackle the challenge and what might get in the way. It's a starting plan, and it will evolve as your design does.</p>
+            </li>
+          </ol>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="apply" id="apply" aria-labelledby="apply-title">
+      <div class="wrap apply__grid">
+        <div class="apply__main">
+          <h2 id="apply-title">Apply by 30 October 2026, 23:59 UK time.</h2>
+          <p class="apply__lede">Once you have a supervisor, they or your team lead email two PDFs to uklunabotics@open.ac.uk. We'll reply to confirm we've received your application.</p>
+          <ol class="docs-to-send">
+            <li>
+              <b>Statement of Support</b>
+              <span>From your Academic Supervisor, on institution letterhead, signed by the supervisor and team members.</span>
+            </li>
+            <li>
+              <b>Project Management Plan</b>
+              <span>Max. 5 pages: initial schedule, cost budget, technical objectives and Technical Performance Measures.</span>
+            </li>
+          </ol>
+          <p>There's no fixed number of places at this stage; if there are more good applications than places, they're offered in order of PMP score. The template statement, file naming and full requirements are in the overview.</p>
+          <div class="apply__actions">
+            <a class="btn btn--ink btn--big" href="mailto:uklunabotics@open.ac.uk?subject=UK%20Lunabotics%202027%20application%20%E2%80%93%20%5BInstitution%20name%5D&amp;body=Hello%2C%0D%0A%0D%0APlease%20find%20our%20UK%20Lunabotics%202027%20application%20attached%3A%0D%0A%0D%0A-%20SOS-%5BInstitution%20name%5D.pdf%20%28Statement%20of%20Support%29%0D%0A-%20PMP-%5BInstitution%20name%5D.pdf%20%28Project%20Management%20Plan%2C%20max.%205%20pages%29%0D%0A%0D%0AInstitution%3A%0D%0AAcademic%20Supervisor%3A%0D%0ATeam%20lead%3A%0D%0A%0D%0AThank%20you">Email your application</a>
+            <button class="btn btn--line btn--big" type="button" data-copy-text="uklunabotics@open.ac.uk">Copy address</button>
+            <span class="copy-status" role="status" aria-live="polite"></span>
+          </div>
+        </div>
+
+        <div class="apply__side">
+          <h3>Who can enter</h3>
+          <ul class="checks">
+            <li>Students at a UK university or further/higher education college in 2026/27, including degree apprentices</li>
+            <li>At least two undergraduate or further education students; postgraduates welcome too</li>
+            <li>An Academic Supervisor: staff at your institution, 21 or over, who attends the whole event</li>
+            <li>Everyone 18 or over before any on-site event</li>
+            <li>Teams from more than one institution are welcome</li>
+          </ul>
+
+          <h3>Finances</h3>
+          <p class="apply__finances">Entry is free. Your team pays for the rover, travel, accommodation and shipping the rover, so make sure these costs are considered in your PMP. In 2026, teams raised money from company sponsors and their universities.</p>
+
+          <h3>Documents</h3>
+          <ul class="files">
+            <li><a href="Lunabotics/UKLunabotics2027_OverviewAndRegistration_v2.0_23_09_2026.pdf"><b>2027 Challenge Overview and Registration Requirements</b><span>PDF · v2.0 · 23 Sep 2026</span></a></li>
+            <li class="is-provisional"><a href="Lunabotics/UKLunabotics2027_RuleBook_DRAFT_v0.1.pdf"><b>2027 Rulebook (draft)</b><span>PDF · draft v0.1 · final version to follow</span></a></li>
+            <li><a href="Lunabotics/UKLunabotics_2025_LaunchSlides.pdf"><b>2025 launch slides</b><span>PDF</span></a></li>
+          </ul>
+          <p class="apply__note">Questions at any stage? Email us; no question is too basic. Teams from the US competition also run a <a href="https://discord.gg/Qh26afgBPT">Lunabotics Discord</a> and welcome UK students.</p>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <h2>Contact & location</h2>
-      <p>The Open University, Kents Hill, Milton Keynes, UK, MK7 6AA</p>
-      <p>Email: <a href="mailto:uklunabotics@open.ac.uk" style="color: white; text-decoration: underline;">uklunabotics@open.ac.uk</a></p>
-      <p>© <span id="year">2026</span> UK Lunabotics.</p>
+  <footer class="foot sky">
+    <div class="wrap">
+      <p class="foot__sign">See you in the Moon Yard.</p>
+      <div class="foot__grid">
+        <div>
+          <img class="foot__ou" src="Lunabotics/ou-logo-white.svg" alt="The Open University" width="561" height="192">
+          <p class="foot__name">UK Lunabotics</p>
+          <p>The Open University, Kents Hill, Milton Keynes, MK7 6AA<br><a href="mailto:uklunabotics@open.ac.uk">uklunabotics@open.ac.uk</a></p>
+        </div>
+        <p class="foot__small">2026 photos courtesy of QPL, Newcastle Lunabotics (Amjad Hamed), Innova UoL (Favour Osadolor Ighede) and Project MarsWorks; photos remain © their teams. Site © 2026 UK Lunabotics.</p>
+      </div>
     </div>
   </footer>
 
-
+  <script src="site.js" defer></script>
 </body>
-
 </html>

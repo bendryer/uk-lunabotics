@@ -142,6 +142,11 @@ p:last-child { margin-bottom: 0; }
   line-height: 0.94; letter-spacing: -0.03em;
 }
 .hero__lede { margin-top: 20px; max-width: 44ch; font-size: 1.125rem; color: var(--ink-soft); }
+.hero__turn {
+  display: inline-block; margin: 8px 0;
+  background: var(--orange); color: var(--ink); padding: 3px 10px 4px;
+  font-weight: 900; font-stretch: 112%; font-size: 1.15em;
+}
 .hero__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
 
 .countdown { margin-top: 28px; padding-top: 14px; border-top: 1px solid var(--ink); }

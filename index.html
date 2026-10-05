@@ -10,9 +10,8 @@
   <meta property="og:title" content="UK Lunabotics 2027">
   <meta property="og:description" content="Student teams build lunar construction rovers and compete in the Moon Yard at The Open University. Apply by 30 October 2026.">
   <meta property="og:image" content="https://uklunabotics.co.uk/Lunabotics/2026/qpl-moon.webp">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..900&family=Martian+Mono:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="preload" href="Lunabotics/fonts/UKLDisplay-800.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="Lunabotics/fonts/Rubik-400-800.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="site.css">
   <script>document.documentElement.classList.add("js");</script>
 </head>
@@ -34,7 +33,7 @@
         <a href="#dates">Dates</a>
         <a href="#apply">Apply</a>
       </nav>
-      <a class="btn btn--orange masthead__cta" href="#start">Start a team</a>
+      <a class="btn btn--orange masthead__cta" href="#start" data-closed-text="Contact us" data-closed-href="mailto:uklunabotics@open.ac.uk">Start a team</a>
     </div>
     <nav class="subnav" aria-label="Sections">
       <a href="#teams">Teams</a>
@@ -51,11 +50,11 @@
       <div class="wrap hero__grid">
         <div class="hero__copy">
           <h1 id="hero-title">Build a robot that builds on the Moon.</h1>
-          <p class="hero__lede">Four UK student teams brought lunar construction rovers to the Moon Yard at The Open University in 2026.<br><span class="hero__turn">2027 is your turn.</span><br>Free to enter, no experience needed.</p>
+          <p class="hero__lede">Four UK student teams brought lunar construction rovers to the Moon Yard at The Open University in 2026.<span data-hide-closed><br><span class="hero__turn">2027 is your turn.</span></span><br>Free to enter, no experience needed.</p>
 
           <div class="hero__actions">
-            <a class="btn btn--orange btn--big" href="#start">Start a team</a>
-            <a class="btn btn--line btn--big" href="#apply">How to apply</a>
+            <a class="btn btn--orange btn--big" href="#start" data-closed-text="Meet the teams" data-closed-href="#teams">Start a team</a>
+            <a class="btn btn--line btn--big" href="#apply" data-closed-text="Ask a question" data-closed-href="mailto:uklunabotics@open.ac.uk">How to apply</a>
           </div>
 
           <div class="countdown" data-deadline="2026-10-30T23:59:00Z">
@@ -73,7 +72,7 @@
           <div class="monitor__bar">
             <span class="monitor__loc">Moon Yard, The Open University, July 2026</span>
             <span class="monitor__status">
-              <span class="monitor__rec" aria-hidden="true"><i></i>2026 replay <span class="monitor__tc" data-timecode>00:00:00:00</span></span>
+              <span class="monitor__rec" aria-hidden="true"><i></i>Still <span class="monitor__count" data-still>1/4</span></span>
               <button class="monitor__pause" type="button" aria-pressed="false" aria-label="Pause the camera cycle" hidden>
                 <svg class="icon-pause" viewBox="0 0 14 14" aria-hidden="true"><rect x="2" y="1" width="3.5" height="12"/><rect x="8.5" y="1" width="3.5" height="12"/></svg>
                 <svg class="icon-play" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1 L13 7 L3 13 Z"/></svg>
@@ -133,7 +132,7 @@
     <section class="teams" id="teams" aria-labelledby="teams-title">
       <div class="wrap">
         <div class="section-head section-head--wide">
-          <h2 id="teams-title">Seven teams started. Four reached the Moon Yard.</h2>
+          <h2 id="teams-title">Seven teams started.<br> Four reached the Moon Yard.</h2>
           <p>UK Lunabotics ran for the first time in 2026. These are the teams that brought rovers to the competition at The Open University, Milton Keynes.</p>
         </div>
 
@@ -156,7 +155,7 @@
           <article class="squad__team">
             <img src="Lunabotics/2026/leicester-moon.webp" alt="University of Leicester Innova UoL team with rover INNEX-1 in front of the inflatable Moon" width="800" height="450" loading="lazy">
             <div>
-              <h3>Innova UoL <span>University of Leicester</span></h3>
+              <h3>Innova <span class="keep-case">UoL</span> <span>University of Leicester</span></h3>
               <p>Months of design, manufacturing and late-night testing took their rover, INNEX-1, from CAD models to a working machine.</p>
             </div>
           </article>
@@ -215,8 +214,8 @@
               <rect class="arena__dig" x="515" y="0" width="275" height="440"/>
               <rect class="arena__zone" x="0" y="0" width="200" height="200"/>
               <rect class="arena__zone" x="0" y="290" width="260" height="150"/>
-              <rect class="arena__target" x="35" y="318" width="150" height="90"/>
-              <path class="arena__berm" d="M52 380 C 70 352, 150 352, 168 380 Z"/>
+              <rect class="arena__target" x="55" y="332" width="150" height="90"/>
+              <path class="arena__berm" d="M72 394 C 90 366, 170 366, 188 394 Z"/>
 
               <g class="arena__rock">
                 <circle cx="52" cy="248" r="17"/><circle cx="292" cy="72" r="17"/>
@@ -229,16 +228,16 @@
               </g>
 
               <path class="arena__route" d="M120 120 C 250 150, 420 120, 600 175" marker-end="url(#route-arrow)"/>
-              <path class="arena__route" d="M610 225 C 470 285, 320 310, 200 352" marker-end="url(#route-arrow)"/>
+              <path class="arena__route" d="M610 225 C 470 285, 330 320, 222 360" marker-end="url(#route-arrow)"/>
 
               <g class="arena__stop"><circle cx="380" cy="132" r="19"/><text x="380" y="140">1</text></g>
               <g class="arena__stop"><circle cx="640" cy="200" r="19"/><text x="640" y="208">2</text></g>
-              <g class="arena__stop"><circle cx="226" cy="402" r="19"/><text x="226" y="410">3</text></g>
+              <g class="arena__stop"><circle cx="232" cy="410" r="19"/><text x="232" y="418">3</text></g>
 
-              <text class="arena__label" x="16" y="34">Start</text>
-              <text class="arena__label" x="16" y="282">Construction</text>
-              <text class="arena__label" x="290" y="28">Obstacles</text>
-              <text class="arena__label" x="531" y="34">Excavation</text>
+              <text class="arena__label" x="100" y="34" text-anchor="middle">Start</text>
+              <text class="arena__label" x="130" y="318" text-anchor="middle">Construction</text>
+              <text class="arena__label" x="387" y="34" text-anchor="middle">Obstacles</text>
+              <text class="arena__label" x="652" y="34" text-anchor="middle">Excavation</text>
 
               <g class="arena__dim">
                 <path d="M0 478 V492 M790 478 V492 M0 485 H790"/>
@@ -327,7 +326,7 @@
           <li data-date="2026-10-30T23:59:00Z"><time datetime="2026-10-30T23:59">Fri 30 Oct 2026</time><span class="timeline__t"></span><div><b><a href="#apply">Applications close</a></b></div></li>
           <li data-date="2026-11-20T23:59:00Z"><time datetime="2026-11-20">By Fri 20 Nov 2026</time><span class="timeline__t"></span><div><b>Places announced</b></div></li>
           <li data-date="2026-12-02T09:00:00Z"><time datetime="2026-12-02">Wed 2 Dec 2026</time><span class="timeline__t"></span><div><b>Information day</b><p>At The Open University, or join remotely.</p></div></li>
-          <li data-date="2027-03-12T23:59:00Z"><time datetime="2027-01-29">Jan – Mar 2027</time><span class="timeline__t"></span><div><b>Design reviews</b><p>Your team runs its own, with feedback from organisers and industry.</p></div></li>
+          <li data-date="2027-03-12T23:59:00Z"><time datetime="2027-03-12">Jan – Mar 2027</time><span class="timeline__t"></span><div><b>Design reviews</b><p>Your team runs its own, with feedback from organisers and industry.</p></div></li>
           <li data-date="2027-05-14T23:59:00Z"><time datetime="2027-05-14">By Fri 14 May 2027</time><span class="timeline__t"></span><div><b>Proof of Life video</b><p>Show your rover can be operated and that its safety functions, like the emergency stop, work.</p></div></li>
           <li data-date="2027-07-06T09:00:00Z"><time datetime="2027-07-06">6–8 Jul 2027</time><span class="timeline__t"></span><div><b>UK Lunabotics Competition</b><p>The Moon Yard, The Open University, Milton Keynes.</p></div></li>
         </ol>
@@ -344,17 +343,17 @@
         <div class="start__grid">
           <ol class="steps">
             <li>
-              <span class="steps__when">This week</span>
+              <span class="steps__when" data-hide-closed>This week</span>
               <b>Ask a lecturer to be your Academic Supervisor</b>
-              <p>A member of staff at your institution, 21 or over, who supports the team through the year, signs your Statement of Support and attends the whole competition (6–8 July 2027).</p>
+              <p>A member of staff at your institution, 21 or over, who supports the team through the year, signs your Statement of Support and attends the whole competition (6–8 July 2027). <a href="Lunabotics/UKLunabotics2027_OverviewAndRegistration_v2.0_23_09_2026.pdf">Show them the 2027 overview (PDF)</a>.</p>
             </li>
             <li>
-              <span class="steps__when">This week</span>
+              <span class="steps__when" data-hide-closed>This week</span>
               <b>Start recruiting your team</b>
               <p>Teams need at least two undergraduate or further education students. There's no maximum, but only around 10 per team can attend the event.</p>
             </li>
             <li>
-              <span class="steps__when">Before 30 Oct</span>
+              <span class="steps__when" data-hide-closed>Before 30 Oct</span>
               <b>Write your Project Management Plan</b>
               <p>Up to 5 pages: your first take on how you'd tackle the challenge and what might get in the way. It's a starting plan, and it will evolve as your design does.</p>
             </li>
@@ -367,27 +366,32 @@
     <section class="apply" id="apply" aria-labelledby="apply-title">
       <div class="wrap apply__grid">
         <div class="apply__main">
-          <h2 id="apply-title">Apply by 30 October 2026, 23:59 UK time.</h2>
-          <p class="apply__lede">Once you have a supervisor, they or your team lead email two PDFs to uklunabotics@open.ac.uk. We'll reply to confirm we've received your application.</p>
-          <ol class="docs-to-send">
+          <h2 id="apply-title" data-closed-text="Applications for 2027 have closed.">Apply by 30 October 2026, 23:59 UK time.</h2>
+          <p class="apply__lede" data-closed-text="Thanks to every team that applied. Places will be announced by 20 November 2026. Questions? Email uklunabotics@open.ac.uk." data-announced-after="2026-11-20T23:59:00Z" data-announced-text="Thanks to every team that applied. Places for 2027 have now been announced. Questions? Email uklunabotics@open.ac.uk.">Once you have a supervisor, they or your team lead email two PDFs to uklunabotics@open.ac.uk. We'll reply to confirm we've received your application.</p>
+          <div class="apply__actions">
+            <a class="btn btn--ink btn--big" data-hide-closed href="mailto:uklunabotics@open.ac.uk?subject=UK%20Lunabotics%202027%20application%20%E2%80%93%20%5BInstitution%20name%5D&amp;body=Hello%2C%0D%0A%0D%0APlease%20find%20our%20UK%20Lunabotics%202027%20application%20attached%3A%0D%0A%0D%0A-%20SOS-%5BInstitution%20name%5D.pdf%20%28Statement%20of%20Support%29%0D%0A-%20PMP-%5BInstitution%20name%5D.pdf%20%28Project%20Management%20Plan%2C%20max.%205%20pages%29%0D%0A%0D%0AInstitution%3A%0D%0AAcademic%20Supervisor%3A%0D%0ATeam%20lead%3A%0D%0A%0D%0AThank%20you">Email your application</a>
+            <button class="btn btn--line btn--big" type="button" data-copy-text="uklunabotics@open.ac.uk">Copy address</button>
+            <span class="copy-status" role="status" aria-live="polite"></span>
+          </div>
+          <ol class="docs-to-send" data-hide-closed>
             <li>
               <b>Statement of Support</b>
               <span>From your Academic Supervisor, on institution letterhead, signed by the supervisor and core team members.</span>
             </li>
             <li>
               <b>Project Management Plan</b>
-              <span>Max. 5 pages: initial schedule, cost budget, technical objectives and Technical Performance Measures.</span>
+              <span>Max. 5 pages: initial schedule, cost budget, technical objectives and Technical Performance Measures (the measurable targets that show your rover meets them).</span>
             </li>
           </ol>
-          <p>There's no fixed number of places at this stage; if there are more good applications than places, they're offered in order of PMP score. The template statement, file naming and full requirements are in the overview.</p>
-          <div class="apply__actions">
-            <a class="btn btn--ink btn--big" href="mailto:uklunabotics@open.ac.uk?subject=UK%20Lunabotics%202027%20application%20%E2%80%93%20%5BInstitution%20name%5D&amp;body=Hello%2C%0D%0A%0D%0APlease%20find%20our%20UK%20Lunabotics%202027%20application%20attached%3A%0D%0A%0D%0A-%20SOS-%5BInstitution%20name%5D.pdf%20%28Statement%20of%20Support%29%0D%0A-%20PMP-%5BInstitution%20name%5D.pdf%20%28Project%20Management%20Plan%2C%20max.%205%20pages%29%0D%0A%0D%0AInstitution%3A%0D%0AAcademic%20Supervisor%3A%0D%0ATeam%20lead%3A%0D%0A%0D%0AThank%20you">Email your application</a>
-            <button class="btn btn--line btn--big" type="button" data-copy-text="uklunabotics@open.ac.uk">Copy address</button>
-            <span class="copy-status" role="status" aria-live="polite"></span>
+          <p data-hide-closed>There's no fixed number of places at this stage; if there are more good applications than places, they're offered in order of how well each Project Management Plan scores. The template statement, file naming and full requirements are in the <a href="Lunabotics/UKLunabotics2027_OverviewAndRegistration_v2.0_23_09_2026.pdf">2027 overview (PDF)</a>.</p>
+          <div class="apply__fin">
+          <h3>Finances</h3>
+          <p class="apply__finances">Entry is free. Your team pays for the rover, travel, accommodation and shipping the rover, so make sure these costs are considered in your PMP. Most teams raise and spend around £4,000–£10,000 in their first year, covering the rover build and attending the competition. In 2026, teams raised money from company sponsors and their universities.</p>
           </div>
         </div>
 
         <div class="apply__side">
+          <div class="apply__who">
           <h3>Who can enter</h3>
           <ul class="checks">
             <li>Students at a UK university or further/higher education college in 2026/27, including degree apprentices</li>
@@ -396,10 +400,9 @@
             <li>Everyone 18 or over before any on-site event</li>
             <li>Teams from more than one institution are welcome</li>
           </ul>
+          </div>
 
-          <h3>Finances</h3>
-          <p class="apply__finances">Entry is free. Your team pays for the rover, travel, accommodation and shipping the rover, so make sure these costs are considered in your PMP. In 2026, teams raised money from company sponsors and their universities.</p>
-
+          <div class="apply__ref">
           <h3>Documents</h3>
           <ul class="files">
             <li><a href="Lunabotics/UKLunabotics2027_OverviewAndRegistration_v2.0_23_09_2026.pdf"><b>2027 Challenge Overview and Registration Requirements</b><span>PDF · v2.0 · 23 Sep 2026</span></a></li>
@@ -407,6 +410,7 @@
             <li><a href="Lunabotics/UKLunabotics_2025_LaunchSlides.pdf"><b>2025 launch slides</b><span>PDF</span></a></li>
           </ul>
           <p class="apply__note">Questions at any stage? Email us; no question is too basic. Teams from the US competition also run a <a href="https://discord.gg/Qh26afgBPT">Lunabotics Discord</a> and welcome UK students.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -421,7 +425,14 @@
           <p class="foot__name">UK Lunabotics</p>
           <p>The Open University, Kents Hill, Milton Keynes, MK7 6AA<br><a href="mailto:uklunabotics@open.ac.uk">uklunabotics@open.ac.uk</a></p>
         </div>
-        <p class="foot__small">2026 photos courtesy of QPL, Newcastle Lunabotics, Innova UoL and Project MarsWorks. Site © 2026 UK Lunabotics.</p>
+        <div>
+          <ul class="foot__links">
+            <li><a href="Lunabotics/UKLunabotics2027_OverviewAndRegistration_v2.0_23_09_2026.pdf">2027 overview (PDF)</a></li>
+            <li><a href="Lunabotics/UKLunabotics2027_RuleBook_DRAFT_v0.1.pdf">2027 rulebook, draft (PDF)</a></li>
+            <li><a href="https://discord.gg/Qh26afgBPT">Lunabotics Discord</a></li>
+          </ul>
+          <p class="foot__small">2026 photos courtesy of QPL, Newcastle Lunabotics, Innova UoL and Project MarsWorks. Site © 2026 UK Lunabotics.</p>
+        </div>
       </div>
     </div>
   </footer>

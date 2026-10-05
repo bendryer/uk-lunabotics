@@ -6,6 +6,28 @@
   var pad = function (n) { return String(n).padStart(2, '0'); };
   var DAY = 86400000;
 
+  /* After the deadline, swap the live calls to action for "closed" wording */
+  var closeApplications = function () {
+    if (document.documentElement.classList.contains('is-closed')) return;
+    document.documentElement.classList.add('is-closed');
+    document.querySelectorAll('[data-closed-text]').forEach(function (el) {
+      /* Once its follow-up date has passed (places announced), an element moves on to its later wording */
+      var after = el.getAttribute('data-announced-after');
+      var later = after && Date.now() >= new Date(after).getTime();
+      el.textContent = el.getAttribute(later ? 'data-announced-text' : 'data-closed-text');
+    });
+    document.querySelectorAll('[data-closed-href]').forEach(function (el) { el.setAttribute('href', el.getAttribute('data-closed-href')); });
+  };
+
+  /* One orange action at a time: quieten the masthead button while the hero buttons are visible */
+  var mastCta = document.querySelector('.masthead__cta');
+  var heroActions = document.querySelector('.hero__actions');
+  if (mastCta && heroActions && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      mastCta.classList.toggle('is-quiet', entries[0].isIntersecting);
+    }).observe(heroActions);
+  }
+
   /* Countdown to the application deadline */
   var countdown = document.querySelector('.countdown');
   if (countdown) {
@@ -15,6 +37,7 @@
     var tick = function () {
       var left = deadline - Date.now();
       if (left <= 0) {
+        closeApplications();
         countdown.classList.add('is-closed');
         countdown.querySelector('.countdown__label').textContent = 'Applications for 2027 have closed. Email us with any questions.';
         return false;
@@ -61,7 +84,7 @@
   if (monitor) {
     var tabs = Array.prototype.slice.call(monitor.querySelectorAll('[role="tab"]'));
     var pauseBtn = monitor.querySelector('.monitor__pause');
-    var tc = monitor.querySelector('[data-timecode]');
+    var still = monitor.querySelector('[data-still]');
     var DWELL = 6500;
     var current = 0;
     var elapsed = 0;
@@ -69,7 +92,6 @@
     var onScreen = true;
     var rafId = null;
     var last = null;
-    var replayClock = 0;
 
     /* Feeds 2-4 are lazy in the markup, so they never compete with the first screen;
        once the page has loaded they are fetched eagerly so each cut lands on a ready image */
@@ -105,6 +127,7 @@
       }
       current = i;
       elapsed = 0;
+      if (still) still.textContent = (i + 1) + '/' + tabs.length;
       if (focus) tabs[i].focus();
     };
 
@@ -127,12 +150,6 @@
       var dt = Math.min(t - last, 100);
       last = t;
       if (cycling()) {
-        /* The replay timecode only runs while the cycle is playing */
-        replayClock += dt;
-        if (tc) {
-          var f = Math.floor(replayClock / 40);
-          tc.textContent = pad(Math.floor(f / 90000) % 24) + ':' + pad(Math.floor(f / 1500) % 60) + ':' + pad(Math.floor(f / 25) % 60) + ':' + pad(f % 25);
-        }
         elapsed += dt;
         if (elapsed >= DWELL) select((current + 1) % tabs.length);
         tabs[current].style.setProperty('--p', Math.min(elapsed / DWELL, 1).toFixed(4));
@@ -215,8 +232,11 @@
       });
     };
     var spy = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) { if (e.isIntersecting) setCurrent(e.target.id); });
+      /* Back at the hero, no section is current */
+      entries.forEach(function (e) { if (e.isIntersecting) setCurrent(e.target.id === 'top' ? '' : e.target.id); });
     }, { rootMargin: '-45% 0px -50% 0px' });
     Object.keys(sections).forEach(function (id) { spy.observe(sections[id]); });
+    var heroTop = document.getElementById('top');
+    if (heroTop) spy.observe(heroTop);
   }
 })();

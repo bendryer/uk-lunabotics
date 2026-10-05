@@ -17,3 +17,8 @@ Lunabotics/*
 !Lunabotics/2026/
 Lunabotics/2026/*
 !Lunabotics/2026/*.webp
+!Lunabotics/fonts/
+Lunabotics/fonts/*
+!Lunabotics/fonts/*.woff2
+!Lunabotics/fonts/*.woff
+!Lunabotics/fonts/*-OFL.txt

@@ -28,8 +28,12 @@
     }).observe(heroActions);
   }
 
-  /* Countdown to the application deadline */
+  /* Pages without the countdown (About) still switch to their closed wording after the deadline */
   var countdown = document.querySelector('.countdown');
+  var siteDeadline = document.documentElement.getAttribute('data-deadline');
+  if (!countdown && siteDeadline && Date.now() >= new Date(siteDeadline).getTime()) closeApplications();
+
+  /* Countdown to the application deadline */
   if (countdown) {
     var deadline = new Date(countdown.getAttribute('data-deadline')).getTime();
     var units = {};
@@ -217,7 +221,8 @@
   });
 
   /* Navigation: mark the section on screen */
-  var links = Array.prototype.slice.call(document.querySelectorAll('.masthead__nav a, .subnav a'));
+  /* Only in-page anchors take part; page links (About) keep their own aria-current="page" */
+  var links = Array.prototype.slice.call(document.querySelectorAll('.masthead__nav a[href^="#"], .subnav a[href^="#"]'));
   if (links.length && 'IntersectionObserver' in window) {
     var sections = {};
     links.forEach(function (a) {

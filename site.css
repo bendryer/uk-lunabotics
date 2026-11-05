@@ -781,7 +781,7 @@ p, li { text-wrap: pretty; }
 .proto-bar .ph, .sky .ph { color: var(--moon-soft); }
 .proto-bar .ph { vertical-align: 0.1em; margin: 0 2px; }
 
-.page-about .lineage, .page-about .why-ou, .page-about .sponsors,
+.page-about .sponsors,
 .page-about .board, .page-about .crew, .page-about .thanks { padding-block: var(--section); }
 
 /* Opening */
@@ -815,43 +815,6 @@ p, li { text-wrap: pretty; }
 .readout dt .ph { display: block; width: max-content; margin: 6px 0 0; vertical-align: 0; }
 .readout .is-ph dd { color: var(--ink-soft); }
 
-/* Lineage: the arena's dashed orange route, read left to right */
-.lineage__route {
-  list-style: none; padding: 0; margin: 0; counter-reset: stop;
-  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: clamp(20px, 3vw, 40px);
-  position: relative;
-}
-.lineage__route::before {
-  content: ""; position: absolute; left: 19px; right: 0; top: 19px;
-  border-top: 3px dashed var(--orange);
-}
-.lineage__route li { counter-increment: stop; position: relative; padding-top: 58px; }
-.lineage__route li::before {
-  content: counter(stop); position: absolute; left: 0; top: 0;
-  width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center;
-  background: var(--orange); color: var(--ink); font-weight: 800; font-size: 1.1rem;
-  outline: 6px solid var(--sky);
-}
-.lineage__year { display: block; font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.08em; color: var(--moon-soft); }
-.lineage__route b { display: block; margin-top: 6px; color: var(--moon); font-size: 1.2rem; font-weight: 800; line-height: 1.3; }
-.lineage__route p { margin-top: 8px; color: var(--moon-soft); font-size: 0.95rem; }
-.lineage__note { margin-top: clamp(36px, 5vw, 56px); padding-top: 16px; border-top: 1px solid var(--rule-sky); color: var(--moon-soft); font-size: 0.95rem; max-width: 70ch; }
-
-.logo-slot {
-  display: grid; place-content: center; gap: 2px; min-height: 76px; margin-top: 18px; padding: 10px;
-  border: 1px dashed var(--moon-soft); border-radius: 2px; text-align: center;
-}
-.logo-slot span { font-weight: 800; font-size: 0.95rem; color: var(--moon); }
-.logo-slot small { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--moon-soft); }
-.logo-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-
-/* Why the OU */
-.why-ou__grid { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 6fr); gap: var(--col-gap); align-items: start; }
-.why-ou h2 { margin-bottom: 20px; }
-.why-ou__lede { font-size: 1.25rem; font-weight: 600; max-width: 40ch; }
-.why-ou__text p:not(.why-ou__lede) { color: var(--ink-soft); max-width: 56ch; }
-.why-ou__heritage h3 { margin-bottom: 18px; }
-
 /* Sponsors: one flat grid, every logo the same size and tone */
 .sponsors { border-top: 1px solid var(--ink); }
 .sponsor-grid {
@@ -877,6 +840,13 @@ p, li { text-wrap: pretty; }
 .lg-s { font-family: var(--mono); font-weight: 400; font-size: 9px; letter-spacing: 0.24em; }
 .sponsors__note { margin-top: 24px; color: var(--ink-soft); }
 
+.about-open__lede { color: var(--ink); font-weight: 600; font-size: 1.25rem; max-width: 42ch; }
+.about-open__body { max-width: 56ch; color: var(--ink-soft); }
+.sponsor-grid .slot { fill: none; stroke: currentColor; stroke-width: 1.5; stroke-dasharray: 6 5; }
+.credits__role--tbc { font-style: italic; }
+.credits .is-ph .credits__name, .crew-grid .is-ph strong { opacity: 0.7; }
+.sponsor span .ph { vertical-align: 0.1em; }
+
 /* Advisory board: end credits on a black band, role and organisation | name, either side of a spine */
 .board__head { max-width: 62ch; margin: 0 auto clamp(40px, 5vw, 64px); text-align: center; }
 .board__head h2 {
@@ -896,8 +866,6 @@ p, li { text-wrap: pretty; }
   font-family: var(--caption); font-weight: 800; font-size: clamp(1.3rem, 1.2vw + 0.75rem, 1.7rem);
   line-height: 1.1; text-transform: uppercase; letter-spacing: 0.02em; color: var(--moon);
 }
-.credits li.credits__chair { padding-bottom: 28px; margin-bottom: 14px; border-bottom: 1px solid var(--rule-sky); }
-.credits__chair .credits__name { font-size: clamp(1.7rem, 2.2vw + 0.7rem, 2.6rem); }
 
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
@@ -947,27 +915,20 @@ p, li { text-wrap: pretty; }
 .thanks :focus-visible { outline-color: var(--ink); }
 
 /* Display type for the About headings */
-.about-open h1, .why-ou h2, .why-ou__heritage h3 {
+.about-open h1 {
   font-family: var(--display); font-weight: 800; letter-spacing: 0.01em; text-transform: uppercase; text-wrap: balance;
 }
-.why-ou h2 { font-size: clamp(1.6rem, 1.9vw + 0.6rem, 2.6rem); line-height: 1.1; }
-.why-ou__heritage h3 { font-size: clamp(1.3rem, 1.2vw + 0.75rem, 1.7rem); line-height: 1.12; }
 
 @media (max-width: 1240px) {
   .masthead__nav { gap: 22px; }
   .masthead__nav .nav-page::before { left: -12px; }
 }
 @media (max-width: 1080px) {
-  .about-open__grid, .why-ou__grid, .thanks__grid { grid-template-columns: minmax(0, 1fr); }
+  .about-open__grid, .thanks__grid { grid-template-columns: minmax(0, 1fr); }
   .about-open__photo { max-width: 760px; }
-  .lineage__route { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 40px; }
-  .lineage__route::before { display: none; }
   .crew-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 @media (max-width: 760px) {
-  .lineage__route { grid-template-columns: minmax(0, 1fr); row-gap: 0; }
-  .lineage__route::before { display: block; left: 19px; right: auto; top: 20px; bottom: 20px; border-top: 0; border-left: 3px dashed var(--orange); }
-  .lineage__route li { padding: 0 0 32px 60px; }
   .sponsor-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .sponsor { padding: 18px 12px 12px; gap: 12px; }
   .sponsor-grid li:last-child:nth-child(odd) { grid-column: 1 / -1; }

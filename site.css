@@ -594,7 +594,7 @@ h3 span { display: block; margin-top: 4px; font-size: 0.95rem; font-weight: 600;
 
 /* Wide: align the start-a-team descriptions across the three columns */
 @media (min-width: 1081px) {
-  .steps { grid-template-rows: auto auto; }
+  .steps { grid-template-rows: auto auto; align-items: start; }
   .steps li { grid-row: span 2; grid-template-rows: subgrid; row-gap: 0; }
   .steps b { grid-row: 1; }
   .steps p { grid-row: 2; }
@@ -781,7 +781,7 @@ p, li { text-wrap: pretty; }
 .proto-bar .ph, .sky .ph { color: var(--moon-soft); }
 .proto-bar .ph { vertical-align: 0.1em; margin: 0 2px; }
 
-.page-about .sponsors,
+.page-about .voices, .page-about .sponsors,
 .page-about .board, .page-about .crew, .page-about .thanks { padding-block: var(--section); }
 
 /* Opening */
@@ -923,6 +923,24 @@ p, li { text-wrap: pretty; }
   font-family: var(--display); font-weight: 800; letter-spacing: 0.01em; text-transform: uppercase; text-wrap: balance;
 }
 
+/* Testimonials */
+.voices { border-top: 1px solid var(--ink); }
+.voices__grid {
+  display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); grid-template-rows: auto auto; align-items: start;
+  gap: clamp(20px, 3vw, 40px);
+}
+.voice { margin: 0; display: flex; flex-direction: column; gap: 16px; padding-top: 18px; border-top: 2px solid var(--ink); }
+.voice--lead { grid-row: 1 / span 2; }
+.voice img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.voice blockquote { margin: 0; }
+.voice blockquote p { margin: 0; font-size: 1.15rem; line-height: 1.5; color: var(--ink); }
+.voice--lead blockquote p { font-size: clamp(1.25rem, 0.6vw + 1.05rem, 1.5rem); font-weight: 600; line-height: 1.4; }
+.voice blockquote.is-ph p { color: var(--ink-soft); font-style: italic; }
+.voice blockquote .ph { font-style: normal; }
+.voice figcaption { display: grid; gap: 2px; margin-top: auto; }
+.voice figcaption b { font-weight: 700; }
+.voice figcaption span { color: var(--ink-soft); font-size: 0.95rem; }
+
 @media (max-width: 1240px) {
   .masthead__nav { gap: 22px; }
   .masthead__nav .nav-page::before { left: -12px; }
@@ -931,6 +949,8 @@ p, li { text-wrap: pretty; }
   .about-open__grid, .thanks__grid { grid-template-columns: minmax(0, 1fr); }
   .about-open__photo { max-width: 760px; }
   .crew-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .voices__grid { grid-template-columns: minmax(0, 1fr); }
+  .voice--lead { grid-row: auto; }
 }
 @media (max-width: 760px) {
   .sponsor-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }

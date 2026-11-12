@@ -914,11 +914,13 @@ p, li { text-wrap: pretty; }
 
 /* Thank-you close */
 .thanks { background: var(--orange); color: var(--ink); }
-.thanks__grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(36px, 6vw, 96px); align-items: end; }
+.thanks__grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(36px, 6vw, 96px); align-items: start; }
 .thanks h2 {
   font-family: var(--display); font-weight: 800; letter-spacing: 0.01em; text-transform: uppercase;
   font-size: clamp(1.8rem, 2.2vw + 0.85rem, 3.2rem); line-height: 1.08;
 }
+/* Side by side, lift the headline so its cap height meets the rule over the routes */
+@media (min-width: 1081px) { .thanks h2 { margin-top: -0.2em; } }
 .thanks__lede { margin-top: 22px; font-size: 1.25rem; font-weight: 600; max-width: 40ch; }
 .thanks__routes { list-style: none; padding: 0; margin: 0; border-top: 2px solid var(--ink); }
 .thanks__routes li { display: grid; row-gap: 4px; justify-items: start; padding: 20px 0; border-bottom: 1px solid var(--ink); }

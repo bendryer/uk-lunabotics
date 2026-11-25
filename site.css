@@ -832,12 +832,8 @@ p, li { text-wrap: pretty; }
 .logo--sservi { height: 120px; }
 .logo--ou { height: 84px; }
 .sponsor-grid span { font-family: var(--caption); font-weight: 600; font-size: 0.95rem; letter-spacing: 0.02em; color: var(--ink-soft); }
-/* Three across: first column left-aligned, middle centred, last right-aligned */
+/* Three equal columns across the full width, each logo centred with its caption beneath */
 .sponsor-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.sponsor-grid li:nth-child(3n+1) .sponsor { justify-items: start; text-align: left; }
-.sponsor-grid li:nth-child(3n+1) .sponsor__logo { justify-content: flex-start; }
-.sponsor-grid li:nth-child(3n) .sponsor { justify-items: end; text-align: right; }
-.sponsor-grid li:nth-child(3n) .sponsor__logo { justify-content: flex-end; }
 .sponsors__note { margin-top: clamp(40px, 4.5vw, 64px); padding-top: 16px; border-top: 1px solid var(--rule-ink); color: var(--ink-soft); }
 
 .about-open__lede { color: var(--ink); font-weight: 600; font-size: 1.25rem; max-width: 42ch; }
@@ -960,10 +956,7 @@ p, li { text-wrap: pretty; }
 }
 @media (max-width: 760px) {
   .voice { grid-template-columns: minmax(0, 1fr); row-gap: 12px; padding: 20px 0 24px; }
-  .sponsor-grid { grid-template-columns: minmax(0, 1fr); gap: 36px 20px; padding-top: 28px; }
-  .sponsor-grid li .sponsor { justify-items: center; text-align: center; }
-  .sponsor-grid li .sponsor__logo { justify-content: center; }
-  .sponsor { gap: 10px; }
+  .sponsor-grid { grid-template-columns: minmax(0, 1fr); gap: 36px 20px; padding-top: 28px; }  .sponsor { gap: 10px; }
   .sponsor__logo { height: 96px; }
   .logo--cat { height: 32px; }
   .logo--sservi { height: 96px; }
